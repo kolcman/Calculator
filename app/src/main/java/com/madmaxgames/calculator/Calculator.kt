@@ -1,6 +1,7 @@
 package com.madmaxgames.calculator
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -8,11 +9,13 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -22,12 +25,23 @@ fun Calculator(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         CalculatorScreen(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.primaryContainer),
+                .clip(
+                    RoundedCornerShape(
+                        topStart = 0.dp,
+                        topEnd = 0.dp,
+                        bottomStart = 40.dp,
+                        bottomEnd = 40.dp
+                    )
+                )
+                .background(MaterialTheme.colorScheme.primaryContainer)
+                .weight(1f)
+                .padding(bottom = 16.dp, start = 40.dp, end = 40.dp),
             content = {
                 ExpressionText(
                     modifier = Modifier,
@@ -52,8 +66,7 @@ private fun CalculatorScreen(
     content: @Composable () -> Unit
 ) {
     Column(
-        modifier = modifier
-            .padding(0.dp, 40.dp, 40.dp, 15.dp),
+        modifier = modifier,
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Bottom
     ) {
@@ -117,13 +130,17 @@ private fun Buttons(
 ) {
     Row(
         modifier = modifier
-            .padding(top = 23.dp, start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
+            .padding(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Box(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
+                .clickable {
+                    println("The 'AC' button was clicked")
+                }
                 .background(MaterialTheme.colorScheme.secondary),
             contentAlignment = Alignment.Center
         ) {
@@ -139,6 +156,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
@@ -154,6 +172,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
@@ -169,6 +188,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
@@ -183,13 +203,14 @@ private fun Buttons(
     }
     Row(
         modifier = modifier
-            .padding(top = 23.dp, start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
+            .padding(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Box(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -205,6 +226,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -220,6 +242,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -235,6 +258,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
@@ -249,13 +273,14 @@ private fun Buttons(
     }
     Row(
         modifier = modifier
-            .padding(top = 23.dp, start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
+            .padding(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Box(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -271,6 +296,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -286,6 +312,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -301,6 +328,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
@@ -315,13 +343,14 @@ private fun Buttons(
     }
     Row(
         modifier = modifier
-            .padding(top = 23.dp, start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
+            .padding(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Box(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -337,6 +366,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -352,6 +382,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -367,6 +398,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
@@ -381,13 +413,14 @@ private fun Buttons(
     }
     Row(
         modifier = modifier
-            .padding(top = 23.dp, start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
+            .padding(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Box(
             modifier = modifier
                 .weight(2f)
                 .aspectRatio(2f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -403,6 +436,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
@@ -418,6 +452,7 @@ private fun Buttons(
             modifier = modifier
                 .weight(1f)
                 .aspectRatio(1f)
+                .clip(RoundedCornerShape(50))
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
         ) {
