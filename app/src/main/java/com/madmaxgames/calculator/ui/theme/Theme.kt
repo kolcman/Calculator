@@ -1,6 +1,5 @@
 package com.madmaxgames.calculator.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,25 +11,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    background = LightScreenBackground,
-    onBackground = LightDigitText,
-    primary = LightDigitButtonBackground,
-    secondary = LightEraseButtonBackground,
-    tertiary = LightOperationButtonBackground,
-    primaryContainer = LightDisplayBackground,
-    onPrimaryContainer = LightDisplayText,
-    onSecondary = LightDigitText,
+    background = DarkBackground,
+    onBackground = White,
+    primary = OperatorButton,
+    secondary = ACButton,
+    tertiary = DigitButton,
+    primaryContainer = DisplayBackground,
+    onPrimaryContainer = DisplayText,
+    onSecondary = ACText,
+    onTertiary = DigitText
 )
 
 private val LightColorScheme = lightColorScheme(
-    background = DarkScreenBackground,
-    onBackground = DarkDigitText,
-    primary = DarkDigitButtonBackground,
-    secondary = DarkEraseButtonBackground,
-    tertiary = DarkOperationButtonBackground,
-    primaryContainer = DarkDisplayBackground,
-    onPrimaryContainer = DarkDisplayText,
-    onSecondary = DarkDigitText,
+    background = LightBackground,
+    onBackground = Black,
+    primary = OperatorButton,
+    secondary = ACButton,
+    tertiary = DigitButton,
+    primaryContainer = White,
+    onPrimaryContainer = Black,
+    onSecondary = ACText,
+    onTertiary = DigitText
 )
 
 @Composable
