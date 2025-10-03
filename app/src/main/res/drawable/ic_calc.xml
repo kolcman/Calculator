@@ -1,0 +1,45 @@
+<!-- res/drawable/ic_calculator.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Корпус калькулятора -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3,3 L21,3 L21,21 L3,21 Z" />
+
+    <!-- Верхнее поле (дисплей) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M5,5 L19,5 L19,9 L5,9 Z" />
+
+    <!-- Кнопки -->
+    <!-- Ряд 1 -->
+    <path android:pathData="M7,12 L9,12" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+    <path android:pathData="M11,12 L13,12" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+    <path android:pathData="M15,12 L17,12" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+
+    <!-- Ряд 2 -->
+    <path android:pathData="M7,15 L9,15" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+    <path android:pathData="M11,15 L13,15" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+    <path android:pathData="M15,15 L17,15" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+
+    <!-- Ряд 3 -->
+    <path android:pathData="M7,18 L9,18" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+    <path android:pathData="M11,18 L13,18" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+    <path android:pathData="M15,18 L17,18" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+
+    <!-- Кнопка "0" (широкая) -->
+    <path android:pathData="M7,21 L13,21" android:strokeColor="@android:color/white" android:strokeWidth="1" android:strokeLineCap="round"/>
+
+</vector>
